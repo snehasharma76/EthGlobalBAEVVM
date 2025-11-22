@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+.zego_container {
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.zego_container {
+  box-shadow: 0 0 30px rgba(0,0,0,0.6) !important;
+  border-radius: 12px; 
+}
