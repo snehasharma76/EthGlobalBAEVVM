@@ -1,283 +1,251 @@
-# Chiliz-Maxxing: EVVM Live Streaming Platform
+# 🎬 StreamIt - Decentralized Live Streaming on EVVM
 
-A decentralized live streaming platform built on EVVM with MATE Metaprotocol integration and x402 autonomous agents.
+> **Stream. Tip. Earn.** The first Web3 live streaming platform powered by EVVM blockchain and MATE Metaprotocol.
 
-## Features
+[![Live Demo](https://img.shields.io/badge/Live-Demo-success?style=for-the-badge)](https://streamit-i63ytbxyr-snehas-projects-5edc1d05.vercel.app)
+[![EVVM](https://img.shields.io/badge/Built%20on-EVVM-purple?style=for-the-badge)](https://evvm.dev)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=for-the-badge)](LICENSE)
 
-### Core Functionality
-- **Live Streaming**: Real-time video streaming powered by ZegoCloud
-- **Blockchain Tipping**: Send tips to creators using ETH on Sepolia testnet
-- **Async Nonces**: Parallel transaction execution for improved UX
-- **Executor Pattern**: Batched operations for gas optimization
+**StreamIt** revolutionizes content creation by enabling creators to stream live and receive instant crypto tips from their audience—all powered by blockchain technology with gasless transactions and autonomous agents.
 
-### MATE Metaprotocol Integration
-- **Name Service**: Register and resolve human-readable names
-- **Staking**: Stake tokens for rewards and governance
-- **P2P Swap**: Decentralized token exchange
+## 🌟 Why StreamIt?
 
-### x402 Autonomous Agents
-- **TipMonitorAgent**: Real-time monitoring of tip events and creator analytics
-- **RewardDistributionAgent**: Automated reward distribution based on staking
-- **NameServiceAgent**: Name resolution caching and synchronization
+### 🎯 The Problem
+Traditional streaming platforms take **30-50% of creator earnings**, have opaque payment systems, and can ban creators arbitrarily. Creators need a decentralized alternative where they truly own their content and earnings.
 
-## Technology Stack
+### 💡 Our Solution
+StreamIt leverages **EVVM blockchain** to provide:
+- ✅ **Instant Tips** - Viewers tip creators directly with crypto
+- ✅ **Zero Platform Fees** - Only 2.5% fee (vs 30-50% on Web2)
+- ✅ **True Ownership** - Creators control their content and wallet
+- ✅ **Gasless Transactions** - EVVM's async nonces enable parallel tipping
+- ✅ **Autonomous Agents** - x402 agents monitor and distribute rewards automatically
 
-### Frontend
-- React 19.1.0
-- Vite 6.3.5
-- TailwindCSS 4.1.6
-- ethers.js 6.9.0
-- React Router DOM 7.9.6
-- ZegoCloud UIKit
+## ✨ Features
 
-### Smart Contracts
-- Solidity 0.8.20
-- AsyncNonceManager (bitmap-based nonce tracking)
-- Executor (batched transaction execution)
-- StreamTipping (creator tipping with platform fees)
-- MATEIntegration (unified MATE service interface)
+### 🎥 For Creators
+- **HD Live Streaming** - Powered by ZegoCloud infrastructure
+- **Creator Dashboard** - Track earnings, tips, and audience stats
+- **Instant Payouts** - Tips sent directly to your wallet
+- **Username Registration** - Register @username via MATE Name Service
+- **Leaderboard** - Compete for top creator spots
 
-### Agents
-- Node.js ES modules
-- Event-driven architecture
-- Autonomous operation with configurable intervals
+### 👀 For Viewers
+- **Browse Live Streams** - Discover creators streaming now
+- **Dual Tipping System** - Tip with ETH or EVVM MATE tokens
+- **Username Display** - See creator names instead of addresses
+- **Top Creators** - Follow the leaderboard and support your favorites
 
-## Quick Start
+### 🤖 x402 Autonomous Agents
+- **TipMonitorAgent** - Monitors all tips and creator performance in real-time
+- **RewardDistributionAgent** - Automatically distributes rewards to top creators
+- **NameServiceAgent** - Caches MATE usernames for fast resolution
 
-### Prerequisites
-- Node.js v18+
-- MetaMask wallet
-- Sepolia ETH (from faucet)
+## 📜 Deployed Smart Contracts (Sepolia Testnet)
 
-### Installation
+| Contract | Address | Purpose |
+|----------|---------|----------|
+| **StreamTipping** | `0x49C31b473C3EfBe8F5384eB7b77C257A961C8Fc8` | Main tipping contract with creator registration |
+| **EVVM Core** | `0x5c66EB3CAAD38851C9c6291D77510b0Eaa8B3c84` | EVVM protocol core for gasless transactions |
+| **MATE Name Service** | `0x7F41487e77D092BA53c980171C4ebc71d68DC5AE` | Username registration and resolution |
+| **MATE Staking** | `0x0fb1aD66636411bB50a33458a8De6507D9b270E8` | Staking rewards for creators |
 
-1. Clone and install dependencies:
+[View on Sepolia Etherscan](https://sepolia.etherscan.io/address/0x49C31b473C3EfBe8F5384eB7b77C257A961C8Fc8)
+
+## 🛠️ Technology Stack
+
+**Frontend**
+- React 19 + Vite 6 - Lightning-fast development
+- TailwindCSS 4 - Modern, responsive UI
+- ethers.js 6 - Ethereum interactions
+- ZegoCloud - HD live streaming
+
+**Blockchain**
+- EVVM (Ethereum Virtual Virtual Machine)
+- Sepolia Testnet
+- MATE Metaprotocol
+- Async Nonces for parallel transactions
+
+**Smart Contracts**
+- StreamTipping - Creator registration & tipping
+- AsyncNonceManager - Parallel transaction support
+- Executor - Batched operations
+- MATE Integration - Name service & staking
+
+**x402 Agents**
+- Node.js autonomous agents
+- Event-driven monitoring
+- Automatic reward distribution
+
+## 🚀 Quick Start
+
+### 1️⃣ Try the Live Demo
+👉 **[Launch StreamIt](https://streamit-i63ytbxyr-snehas-projects-5edc1d05.vercel.app)**
+
+1. Connect your MetaMask wallet (Sepolia network)
+2. Choose "Watch Streams" or "Start Streaming"
+3. Register as a creator in the Creator Dashboard
+4. Start streaming or tip your favorite creators!
+
+### 2️⃣ Run Locally
+
 ```bash
-cd LiveStreamingApp
+# Clone the repository
+git clone https://github.com/snehasharma76/EthGlobalBAEVVM.git
+cd EthGlobalBAEVVM/LiveStreamingApp
+
+# Install dependencies
 npm install
-```
 
-2. Configure environment:
-```bash
+# Configure environment
 cp .env.example .env
-# Edit .env with your configuration
-```
+# Add your ZegoCloud credentials to .env
 
-3. Start development server:
-```bash
+# Start development server
 npm run dev
 ```
 
-4. Deploy smart contracts (see DEPLOYMENT_GUIDE.md)
+### 3️⃣ Run x402 Agents (Optional)
 
-5. Run x402 agents:
 ```bash
-node agents/runAgents.js
+# Add agent private key to .env
+AGENT_PRIVATE_KEY=your_private_key
+
+# Start agents
+npm run agents
 ```
 
-## Project Structure
-
-```
-LiveStreamingApp/
-├── contracts/              # Solidity smart contracts
-│   ├── AsyncNonceManager.sol
-│   ├── Executor.sol
-│   ├── StreamTipping.sol
-│   └── MATEIntegration.sol
-├── agents/                 # x402 autonomous agents
-│   ├── BaseAgent.js
-│   ├── TipMonitorAgent.js
-│   ├── RewardDistributionAgent.js
-│   ├── NameServiceAgent.js
-│   ├── AgentManager.js
-│   └── runAgents.js
-├── src/
-│   ├── components/        # React components
-│   │   ├── JoinForm.jsx
-│   │   ├── LiveStream.jsx
-│   │   ├── TipContract.jsx
-│   │   └── WalletConnect.jsx
-│   ├── hooks/            # Custom React hooks
-│   │   ├── useWeb3.js
-│   │   ├── useStreamTipping.js
-│   │   └── useMATEServices.js
-│   ├── config/           # Configuration files
-│   │   ├── contracts.js
-│   │   └── abis.js
-│   └── App.jsx
-├── DEPLOYMENT_GUIDE.md   # Comprehensive deployment guide
-└── package.json
-
-```
-
-## Smart Contract Architecture
-
-### AsyncNonceManager
-- Bitmap-based nonce tracking (256 nonces per bitmap)
-- Enables parallel transaction execution
-- No sequential nonce requirements
-
-### Executor
-- Batched transaction execution
-- Async nonce integration
-- Gas optimization through batching
-- Automatic refund of excess ETH
-
-### StreamTipping
-- Creator registration and management
-- Tip sending with async nonces
-- Platform fee (2.5% default)
-- Creator statistics and analytics
-- Tip history tracking
-
-### MATEIntegration
-- Unified interface for MATE services
-- Name registration and resolution
-- Staking and reward claiming
-- P2P swap creation and acceptance
-- Graceful degradation if services unavailable
-
-## Agent System
-
-### Architecture
-- Base agent class with common functionality
-- Event-driven monitoring
-- Configurable execution intervals
-- Automatic error handling and recovery
-
-### TipMonitorAgent
-- Monitors TipSent events
-- Tracks creator performance
-- Generates notifications for large tips
-- Calculates average tips per creator
-
-### RewardDistributionAgent
-- Identifies eligible creators based on staking
-- Calculates reward distribution
-- Proportional rewards based on stake
-- Configurable distribution threshold
-
-### NameServiceAgent
-- Caches name registrations
-- Real-time event listening
-- Bidirectional resolution (name ↔ address)
-- Reduces RPC calls through caching
-
-## Usage
-
-### For Viewers
-
-1. **Connect Wallet**: Click "Connect Wallet" and approve MetaMask
-2. **Join Room**: Enter room ID and user ID
-3. **Watch Stream**: View live stream content
-4. **Send Tips**: Click "Tip Creator" and send ETH with optional message
+## 📋 How It Works
 
 ### For Creators
+```mermaid
+Creator → Register → Start Stream → Receive Tips → Earn ETH/MATE
+```
 
-1. **Register**: Call `registerAsCreator()` on StreamTipping contract
-2. **Start Stream**: Create room and share room ID
-3. **Receive Tips**: Tips automatically sent to your wallet (minus 2.5% fee)
-4. **Track Stats**: View total tips and tip count
+1. **Register** - Call `registerCreator()` on StreamTipping contract
+2. **Stream** - Start live stream with ZegoCloud
+3. **Earn** - Receive tips directly to your wallet (97.5% after 2.5% fee)
+4. **Compete** - Climb the leaderboard to attract more viewers
 
-### For Developers
+### For Viewers
+```mermaid
+Viewer → Browse Streams → Watch → Tip Creator → Support Content
+```
 
-1. **Deploy Contracts**: Follow DEPLOYMENT_GUIDE.md
-2. **Configure Agents**: Set up agent wallet and parameters
-3. **Run Agents**: Start agent system with `node agents/runAgents.js`
-4. **Monitor**: Check agent logs and Etherscan for activity
+1. **Browse** - Discover live streams on the platform
+2. **Watch** - Enjoy HD live content
+3. **Tip** - Send ETH or MATE tokens to creators
+4. **Engage** - See your favorite creators on the leaderboard
 
-## Configuration
+## 🎯 Use Cases
 
-### Environment Variables
+### 🎮 Gaming Streamers
+- Stream gameplay and receive instant tips
+- Build community with leaderboard competition
+- No platform taking 50% of your earnings
+
+### 🎵 Musicians & Artists
+- Live performances with direct fan support
+- Register @username for brand identity
+- Keep 97.5% of all tips received
+
+### 📚 Educational Content
+- Live coding sessions and tutorials
+- Receive tips for valuable knowledge sharing
+- Autonomous agents track your performance
+
+### 🗣️ Community Events
+- Host AMAs and community calls
+- Transparent tipping visible on-chain
+- Decentralized and censorship-resistant
+
+## 🔑 Key Innovations
+
+### ⚡ Async Nonces
+EVVM's async nonces allow **parallel transactions** - multiple viewers can tip simultaneously without waiting for sequential nonce ordering. This creates a seamless UX impossible on traditional blockchains.
+
+### 🤖 x402 Autonomous Agents
+Smart agents run 24/7 monitoring tips, distributing rewards, and caching usernames. They operate independently, making the platform truly decentralized.
+
+### 💰 Dual Payment System
+- **ETH Tipping** - Traditional blockchain payments
+- **EVVM MATE Tipping** - Gasless transactions with MATE tokens
+
+Viewers choose their preferred payment method!
+
+## 🔧 Environment Setup
 
 ```bash
-# ZegoCloud
-VITE_ZEGOCLOUD_APP_ID=
-VITE_ZEGOCLOUD_SERVER_SECRET=
-
-# Network
+# Required
+VITE_ZEGOCLOUD_APP_ID=your_zegocloud_app_id
+VITE_ZEGOCLOUD_SERVER_SECRET=your_zegocloud_secret
 VITE_RPC_URL=https://rpc.sepolia.org
-VITE_CHAIN_ID=11155111
+VITE_STREAM_TIPPING_ADDRESS=0x49C31b473C3EfBe8F5384eB7b77C257A961C8Fc8
 
-# Contracts
-VITE_STREAM_TIPPING_ADDRESS=
-VITE_MATE_INTEGRATION_ADDRESS=
-VITE_EXECUTOR_ADDRESS=
+# Optional (for EVVM features)
+VITE_EVVM_ADDRESS=0x5c66EB3CAAD38851C9c6291D77510b0Eaa8B3c84
+VITE_NAME_SERVICE_ADDRESS=0x7F41487e77D092BA53c980171C4ebc71d68DC5AE
+VITE_STAKING_ADDRESS=0x0fb1aD66636411bB50a33458a8De6507D9b270E8
 
-# MATE Services
-VITE_MATE_NAME_SERVICE_ADDRESS=
-VITE_MATE_STAKING_ADDRESS=
-VITE_MATE_P2P_SWAP_ADDRESS=
-
-# Platform
-VITE_PLATFORM_WALLET=
-
-# Agents
-AGENT_PRIVATE_KEY=
-AGENT_TIP_THRESHOLD=0.1
-AGENT_REWARD_POOL=1.0
+# For running agents
+AGENT_PRIVATE_KEY=your_agent_private_key
 ```
 
-## Testing
+## 🛡️ Security
 
-### Manual Testing
-1. Connect wallet to Sepolia
-2. Register as creator
-3. Send test tip
-4. Verify on Etherscan
-5. Check agent logs
+- ✅ All private keys stored in `.env` (never committed)
+- ✅ Smart contracts deployed on Sepolia testnet
+- ✅ Platform fee capped at 2.5%
+- ✅ Direct wallet-to-wallet tipping
+- ✅ Open source and auditable
 
-### Contract Testing
-```bash
-npx hardhat test
-```
+## 📊 Stats
 
-## Security
+- **97.5%** of tips go directly to creators
+- **0 gas fees** with EVVM MATE tipping
+- **Parallel transactions** via async nonces
+- **24/7 monitoring** by x402 agents
 
-- Private keys stored in environment variables (never committed)
-- Platform wallet should use multisig in production
-- Agent wallets should have limited funds
-- Contracts should be audited before mainnet deployment
-- Rate limiting on agent operations
+## 🚀 Roadmap
 
-## Performance
-
-- Async nonces enable parallel transactions
-- Executor batching reduces gas costs
-- Agent caching minimizes RPC calls
-- Optimized contract storage patterns
-
-## Roadmap
-
-- [ ] Mainnet deployment
-- [ ] Additional MATE service integrations
-- [ ] Subscription tiers
-- [ ] NFT rewards for supporters
-- [ ] Creator dashboard
-- [ ] Revenue sharing pools
+- [x] Live streaming with ZegoCloud
+- [x] ETH tipping system
+- [x] EVVM integration
+- [x] Username registration
+- [x] Creator leaderboard
+- [x] x402 autonomous agents
 - [ ] Mobile app
-- [ ] Content moderation agents
-- [ ] Analytics dashboard
+- [ ] NFT badges for top supporters
+- [ ] Subscription tiers
+- [ ] Multi-chain support
 
-## Contributing
+## 🤝 Contributing
 
-1. Fork the repository
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Open pull request
+We welcome contributions! Feel free to:
+- Report bugs
+- Suggest features
+- Submit pull requests
+- Improve documentation
 
-## License
+## 📝 License
 
-MIT License
+MIT License - feel free to use this project for your own streaming platform!
 
-## Support
+## 👏 Built With
 
-For detailed deployment instructions, see [DEPLOYMENT_GUIDE.md](./DEPLOYMENT_GUIDE.md)
+- [EVVM](https://evvm.dev) - Ethereum Virtual Virtual Machine
+- [MATE Metaprotocol](https://evvm.dev) - Decentralized services
+- [ZegoCloud](https://www.zegocloud.com/) - Live streaming infrastructure
+- [Sepolia](https://sepolia.etherscan.io/) - Ethereum testnet
 
-## Acknowledgments
+---
 
-- MATE Metaprotocol team
-- EVVM community
-- ZegoCloud for streaming infrastructure
-- Chiliz ecosystem
+<div align="center">
+
+**🎬 Start streaming on Web3 today!**
+
+[Live Demo](https://streamit-i63ytbxyr-snehas-projects-5edc1d05.vercel.app) • [GitHub](https://github.com/snehasharma76/EthGlobalBAEVVM) • [EVVM Docs](https://evvm.dev)
+
+Made with ❤️ for creators and powered by EVVM
+
+</div>
