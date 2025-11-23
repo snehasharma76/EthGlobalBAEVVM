@@ -1,10 +1,13 @@
 import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { ZegoUIKitPrebuilt } from "@zegocloud/zego-uikit-prebuilt";
+import { useWeb3 } from "../hooks/useWeb3";
+import WalletConnect from "./WalletConnect";
 
 const LiveStream = ({ roomID, userID }) => {
   const containerRef = useRef(null);
   const navigate = useNavigate();
+  const { account } = useWeb3();
 
   const appID = Number(import.meta.env.VITE_ZEGOCLOUD_APP_ID);
   const serverSecret = import.meta.env.VITE_ZEGOCLOUD_SERVER_SECRET;
@@ -39,12 +42,20 @@ const LiveStream = ({ roomID, userID }) => {
   }, [roomID, userID]);
 
   const handleTipClick = () => {
-    // Navigate to TipContract page
-    // You can pass creator information here if available
     navigate("/tip", {
       state: {
-        creatorAddress: "", // Add creator's wallet address here
-        creatorName: userID, // Or creator's name
+        creatorAddress: account || "",
+        creatorName: userID,
+        roomID: roomID,
+      },
+    });
+  };
+
+  const handleEVVMTipClick = () => {
+    navigate("/evvm-tip", {
+      state: {
+        creatorAddress: account || "",
+        creatorName: userID,
         roomID: roomID,
       },
     });
@@ -52,12 +63,15 @@ const LiveStream = ({ roomID, userID }) => {
 
   return (
     <div className="w-full h-screen flex flex-col">
+      <div className="w-full flex justify-between items-center p-4 bg-gray-900/80 border-b border-white/10">
+        <div className="text-white font-semibold">Room: {roomID}</div>
+        <WalletConnect />
+      </div>
       <div
         ref={containerRef}
         className="flex-1 zego_container"
       />
-      {/* Tip button positioned below the messaging section */}
-      <div className="w-full flex justify-center p-4 bg-gray-900/50">
+      <div className="w-full flex justify-center gap-4 p-4 bg-gray-900/50">
         <button
           onClick={handleTipClick}
           className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-semibold px-8 py-3 rounded-lg hover:from-yellow-600 hover:to-orange-600 transition duration-300 cursor-pointer shadow-lg flex items-center gap-2"
@@ -75,7 +89,14 @@ const LiveStream = ({ roomID, userID }) => {
               d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
             />
           </svg>
-          Tip the Creator
+          Tip (ETH)
+        </button>
+        <button
+          onClick={handleEVVMTipClick}
+          className="bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold px-8 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition duration-300 cursor-pointer shadow-lg flex items-center gap-2"
+        >
+          <span>⚡</span>
+          Tip via EVVM (MATE)
         </button>
       </div>
     </div>
