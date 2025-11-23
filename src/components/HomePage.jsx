@@ -2,6 +2,8 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useWeb3 } from '../hooks/useWeb3';
 import WalletConnect from './WalletConnect';
+import UsernameRegistration from './UsernameRegistration';
+import Leaderboard from './Leaderboard';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -112,6 +114,22 @@ const HomePage = () => {
             <h4 className="text-lg font-semibold text-white mb-2">x402 Agents 🤖</h4>
             <p className="text-white/60 text-sm">
               Autonomous agents monitor tips, distribute rewards, and manage names
+            </p>
+          </div>
+        </div>
+
+        {isConnected && (
+          <div className="mt-16 grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            <UsernameRegistration />
+            <Leaderboard />
+          </div>
+        )}
+
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md rounded-full px-6 py-3 border border-white/10">
+            <span className="text-green-400">●</span>
+            <p className="text-white/70 text-sm">
+              <strong className="text-white">Live on EVVM</strong> · Powered by MATE Metaprotocol
             </p>
           </div>
         </div>
